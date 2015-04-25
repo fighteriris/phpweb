@@ -5,6 +5,7 @@ $request  = json_decode($postdata);
 
 @$email = $request->email;
 @$pass = $request->pass;
+
 header('Content-Type: application/json');
 //echo $email; //this will go back under "data" of angular call.
 //echo $email;
@@ -27,7 +28,8 @@ header('Content-Type: application/json');
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			echo "id: " . $row["id"]. " - Name: " . $row["user_name"]. " " . $row["user_token"]. "<br>";
+			//echo "id: " . $row["id"]. " - Name: " . $row["user_name"]. " " . $row["user_token"]. "<br>";
+			
 		}
 	} else {
 		echo "0 results";

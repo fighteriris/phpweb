@@ -26,12 +26,15 @@ app.controller('sign_up', function ($scope, $http) {
         }
         if (error == 0) {
             
+			
+			
 			var dataObj = {
 			email:$scope.email,
-			pass :$scope.pass
+			pass :md5.createHash($scope.pass || '')
 			};
 			$scope.email = "";
 			$scope.password = "";
+			console.log(md5.createHash($scope.pass || ''));
 		var res = $http.post('/phpweb/login.php', dataObj);
 		res.success(function(data, status, headers, config) {
 			$scope.message = data;

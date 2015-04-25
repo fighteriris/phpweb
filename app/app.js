@@ -1,1 +1,1 @@
-var app = angular.module('angular_post', []);
+var app = angular.module('angular_post', ['angular-md5']);
